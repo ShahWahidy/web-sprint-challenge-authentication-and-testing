@@ -54,6 +54,32 @@ Your finished project must include all of the following requirements (further in
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+    
+    Sessions:
+
+    Server generates a "sessionId" (signs it using "secret key"), and 
+    (a) saves the sessionId in a sessionDB, and 
+    (b) sends a cookie with the sessionId to the browser (client side).
+    The browser (client side) receives the "cookie" in the response from server, and saves it in the "cookie"      storage. 
+    The browser then includes the "cookie" within every subsequent request to the server.
+
+    JWT:
+
+    Server generates an "accessToken", encrypting the "userId" and "expiresIn", with the ACCESS_TOKEN_SECRET, 
+    and sends the "accessToken" to the browser (client side).
+    The browser (client side) receives the "accessToken" and saves it on the client side.
+    The "accessToken" is included in every subsequent request to the server.
+
+
 2. What does `bcryptjs` do to help us store passwords in a secure manner?
+    
+    The bcrypt hashing function allows us to build a password security platform that scales with computation power and always hashes every password with a salt.
+
 3. How are unit tests different from integration and end-to-end testing?
+
+    unit testing involves testing individual pieces of code while integration testing involves testing modules of code to understand how they perform alone and how they interact with each other. Another difference between the two is the frequency with which each test should be executed.
+
 4. How does _Test Driven Development_ change the way we write applications and tests?
+
+
+    Test Driven Development (TDD) is a software development practice that focuses on creating unit test cases before developing the actual code. It is an iterative approach that combines programming, the creation of unit tests, and refactoring.
